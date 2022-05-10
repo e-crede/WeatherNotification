@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Background job to fetch Weather statuses is launched...</h1>
+
+<br>
+<h1>Weather Statuses</h1>
+<div id="weather_statuses">
+  <table>
+  <tr>
+    <th>No.</th>
+    <th>Driver</th>
+    <th>Headline</th>
+    <th>Area Desc</th>
+    <th>Severity</th>
+    <th>Effective</th>
+    <th>Expires</th>
+    <th>Description</th>
+    <th>Instruction</th>
+    <th>Notified</th>
+  </tr>
+    <% counter = 1 %>
+    <% @weather_statuses.each do |event| %>
+  <tr>
+      <td><%= counter %></td>
+      <td><%= event.driver.last_name %></td>
+      <td><%= event.headline %></td>
+      <td><%= event.areaDesc %></td>
+      <td><%= event.severity %></td>
+      <td><%= event.effective %></td>
+      <td><%= event.expires %></td>
+      <td><%= event.description %></td>
+     <td><%= event.instruction %></td>
+     <td><%= event.notified %></td>
+  </tr>
+  <% counter+=1 %>
+  <% end %>
+    </table>
+</div>

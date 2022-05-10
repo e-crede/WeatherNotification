@@ -1,0 +1,62 @@
+<%= form_with(model: weather_status) do |form| %>
+  <% if weather_status.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(weather_status.errors.count, "error") %> prohibited this weather_status from being saved:</h2>
+
+      <ul>
+        <% weather_status.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :driver_id, style: "display: block" %>
+    <%= form.text_field :driver_id %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :areaDesc, style: "display: block" %>
+    <%= form.text_field :areaDesc %>
+  </div>
+
+  <div>
+    <%= form.label :headline, style: "display: block" %>
+    <%= form.text_field :headline %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :effective, style: "display: block" %>
+    <%= form.date_field :effective %>
+  </div>
+
+  <div>
+    <%= form.label :expires, style: "display: block" %>
+    <%= form.date_field :expires %>
+  </div>
+
+  <div>
+    <%= form.label :severity, style: "display: block" %>
+    <%= form.text_field :severity %>
+  </div>
+
+  <div>
+    <%= form.label :notified, style: "display: block" %>
+    <%= form.check_box :notified %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

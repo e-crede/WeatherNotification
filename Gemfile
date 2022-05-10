@@ -3,6 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.1"
 
+gem 'faraday', '~> 2.3'
+gem 'rufus-scheduler', '~> 3.8', '>= 3.8.1'
+
+gem 'rubocop', '~> 1.29', '>= 1.29.1'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0.0.rc1'
+end
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
 

@@ -1,0 +1,31 @@
+    <h2>Hi <%= @driver.first_name %></h2>
+    <p>
+    There are severe or extreme weather events in <b><%= @weather_statuses.first.state %><b> today!
+    </p>
+    <br>
+    <table>
+        <tr>
+        <th>No.</th>
+        <th>Headline</th>
+        <th>Area Desc</th>
+        <th>Severity</th>
+        <th>Effective</th>
+        <th>Expires</th>
+        <th>Description</th>
+        <th>Instruction</th>
+        </tr>
+        <% counter = 1 %>
+        <% @weather_statuses.each do |event| %>
+        <tr>
+        <td><%= counter %></td>
+        <td><%= event.headline %></td>
+        <td><%= event.areaDesc %></td>
+        <td><%= event.severity %></td>
+        <td><%= event.effective %></td>
+        <td><%= event.expires %></td>
+        <td><%= event.description %></td>
+        <td><%= event.instruction %></td>
+        </tr>
+        <% counter+=1 %>
+        <% end %>
+    </table>
